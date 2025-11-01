@@ -1,0 +1,10 @@
+# .gitlab-ci.yml
+stages:
+  - test
+
+cypress_test:
+  image: cypress/included:12.0.0
+  stage: test
+  script:
+    - npm install
+    - npx cypress run
