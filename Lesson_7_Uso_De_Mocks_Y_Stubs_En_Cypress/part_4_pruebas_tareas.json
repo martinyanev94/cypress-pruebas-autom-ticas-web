@@ -1,0 +1,18 @@
+[
+    { "id": 1, "title": "Comprar leche", "completed": false },
+    { "id": 2, "title": "Limpiar la casa", "completed": true }
+]
+describe('Pruebas con fixtures y mocks', () => {
+    beforeEach(() => {
+        cy.intercept('GET', '/api/tareas', {
+            statusCode: 200,
+            body: 'fixture:tareas.json' 
+        }).as('getTareasConFixture');
+    });
+
+    it('Debería cargar tareas desde el fixture', () => {
+        cy.visit('/lista-de-tareas');
+        cy.wait('@getTareasConFixture');
+        cy.get('.tarea').should('have.length', 2);
+    });
+});
