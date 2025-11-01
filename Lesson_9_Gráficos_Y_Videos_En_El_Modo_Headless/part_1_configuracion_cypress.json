@@ -1,0 +1,7 @@
+{
+    "trashAssetsBeforeRuns": true,
+    "screenshotsFolder": "cypress/screenshots",
+    "video": true,
+    "videosFolder": "cypress/videos",
+    "screenshotOnRunFailure": true
+}
