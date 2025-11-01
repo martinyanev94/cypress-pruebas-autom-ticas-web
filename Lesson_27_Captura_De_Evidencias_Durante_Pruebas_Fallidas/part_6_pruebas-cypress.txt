@@ -1,0 +1,8 @@
+cypress/
+├── fixtures/
+├── integration/
+│   ├── login/
+│   │   └── login.spec.js
+│   └── dashboard/
+│       └── dashboard.spec.js
+└── support/
