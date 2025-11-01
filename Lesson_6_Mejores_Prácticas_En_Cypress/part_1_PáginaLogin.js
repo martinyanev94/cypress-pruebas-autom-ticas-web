@@ -1,0 +1,27 @@
+// page_objects/LoginPage.js
+class LoginPage {
+    visit() {
+        cy.visit('/login');
+    }
+
+    fillEmail(email) {
+        cy.get('input[name="email"]').type(email);
+    }
+
+    fillPassword(password) {
+        cy.get('input[name="password"]').type(password);
+    }
+
+    submit() {
+        cy.get('form').submit();
+    }
+
+    login(email, password) {
+        this.visit();
+        this.fillEmail(email);
+        this.fillPassword(password);
+        this.submit();
+    }
+}
+
+export default LoginPage;
