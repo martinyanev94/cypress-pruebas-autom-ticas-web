@@ -1,0 +1,15 @@
+// cypress.json
+{
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter.config.json"
+    }
+}
+
+// reporter.config.json
+{
+    "reporterEnabled": "spec, mocha-junit-reporter",
+    "mochaJunitReporterReporterOptions": {
+        "mochaFile": "reports/junit-results.xml"
+    }
+}
