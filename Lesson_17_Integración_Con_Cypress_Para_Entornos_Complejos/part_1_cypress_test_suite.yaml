@@ -1,0 +1,18 @@
+name: Cypress Test Suite
+
+on: [push]
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chequear el repositorio
+        uses: actions/checkout@v2
+      - name: Instalar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Instalar dependencias
+        run: npm install
+      - name: Ejecutar pruebas de Cypress
+        run: npx cypress run
