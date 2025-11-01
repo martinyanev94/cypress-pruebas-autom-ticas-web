@@ -1,0 +1,9 @@
+env:
+  API_URL: ${{ secrets.API_URL }}
+  NODE_ENV: development
+cy.request({
+  method: 'GET',
+  url: Cypress.env('API_URL') + '/endpoint',
+}).then((response) => {
+  expect(response.status).to.equal(200);
+});
